@@ -20,7 +20,7 @@ pipeline {
                 echo 'Deploying application to Production EC2...'
                 // Jenkins securely copies the file to your App Server using SSH
                 sshagent(['aws-app-server-key']) {
-                    sh 'scp -o StrictHostKeyChecking=no index.html ubuntu@<YOUR_APP_SERVER_IP>:/var/www/html/'
+                    sh 'scp -o StrictHostKeyChecking=no index.html ubuntu@54.196.128.153:/var/www/html/'
                 }
             }
         }
