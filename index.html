@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Error</title>
+    <title>Google</title>
     <style>
         * {
             box-sizing: border-box;
@@ -11,110 +11,220 @@
             padding: 0;
         }
 
-        body, html {
-            width: 100%;
-            height: 100%;
-            background-color: #0078d7; /* Windows 10/11 Blue */
-            color: #ffffff;
-            font-family: "Segoe UI", -apple-system, sans-serif;
-            overflow: hidden; /* Hides scrollbars */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            max-width: 800px;
-            padding: 40px;
-            width: 100%;
-        }
-
-        .sad-face {
-            font-size: 120px;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-
-        .message {
-            font-size: 24px;
-            line-height: 1.5;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .details {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .qr-code {
-            width: 100px;
-            height: 100px;
-            background-color: #ffffff;
-            /* Placeholder for a QR code block */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .qr-placeholder {
-            width: 85%;
-            height: 85%;
-            background-color: #0078d7;
-        }
-
-        .info-text {
+        body {
+            font-family: Arial, sans-serif;
             font-size: 14px;
-            line-height: 1.6;
+            color: #202124;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
 
-        .stop-code {
-            margin-top: 10px;
-            font-weight: bold;
+        /* Header / Navigation */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px 30px;
+            gap: 15px;
+        }
+
+        header a {
+            color: #000000;
+            text-decoration: none;
+            opacity: 0.85;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .sign-in-btn {
+            background-color: #1a73e8;
+            color: white !important;
+            padding: 9px 23px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .sign-in-btn:hover {
+            background-color: #1557b0;
+            text-decoration: none !important;
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+        }
+
+        /* Main Search Area */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: -50px; /* Shifts everything slightly up for classic Google layout */
+        }
+
+        .logo {
+            font-size: 90px;
+            font-weight: 500;
+            letter-spacing: -2px;
+            margin-bottom: 30px;
+            user-select: none;
+        }
+
+        /* Google Logo Colors */
+        .g1 { color: #4285F4; }
+        .o1 { color: #EA4335; }
+        .o2 { color: #FBBC05; }
+        .g2 { color: #4285F4; }
+        .l  { color: #34A853; }
+        .e  { color: #EA4335; }
+
+        .search-container {
+            width: 100%;
+            max-width: 584px;
+            padding: 0 20px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            padding: 0 15px;
+            height: 46px;
+            transition: box-shadow 0.1s;
+        }
+
+        .search-box:hover, .search-box:focus-within {
+            box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+            border-color: rgba(223,225,229,0);
+        }
+
+        .search-box input {
+            flex: 1;
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            padding-left: 10px;
+        }
+
+        /* Glass / Search icon representation */
+        .search-icon {
+            color: #9aa0a6;
+            font-size: 18px;
+        }
+
+        .buttons-container {
+            margin-top: 25px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            background-color: #f8f9fa;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            color: #3c4043;
+            font-size: 14px;
+            padding: 0 16px;
+            line-height: 34px;
+            height: 36px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .btn:hover {
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+            background-color: #f8f9fa;
+            border: 1px solid #dadce0;
+            color: #202124;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #f2f2f2;
+            color: #70757a;
+            border-top: 1px solid #e4e4e4;
+        }
+
+        .footer-location {
+            padding: 15px 30px;
+            border-bottom: 1px solid #e4e4e4;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 15px 30px;
+        }
+
+        .footer-links div {
+            display: flex;
+            gap: 25px;
+        }
+
+        footer a {
+            color: #70757a;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="sad-face">:(</div>
-        
-        <div class="message">
-            Your PC ran into a problem and needs to restart. We're just collecting some error info, and then we'll restart for you.
-        </div>
-        
-        <div class="message">
-            <span id="percentage">0</span>% complete
+    <!-- Header Navigation -->
+    <header>
+        <a href="#">Gmail</a>
+        <a href="#">Images</a>
+        <a href="#" class="sign-in-btn">Sign in</a>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Custom Styled Google Text Logo -->
+        <div class="logo">
+            <span class="g1">G</span><span class="o1">o</span><span class="o2">o</span><span class="g2">g</span><span class="l">l</span><span class="e">e</span>
         </div>
 
-        <div class="details">
-            <div class="qr-code">
-                <div class="qr-placeholder"></div>
+        <!-- Search Bar -->
+        <div class="search-container">
+            <form action="https://www.google.com/search" method="GET">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" name="q" autocomplete="off" autofocus>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="buttons-container">
+                    <button type="submit" class="btn">Google Search</button>
+                    <button type="button" class="btn" onclick="window.location.href='https://doodles.google/'">I'm Feeling Lucky</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer Area -->
+    <footer>
+        <div class="footer-location">India</div>
+        <div class="footer-links">
+            <div>
+                <a href="#">About</a>
+                <a href="#">Advertising</a>
+                <a href="#">Business</a>
+                <a href="#">How Search works</a>
             </div>
-            
-            <div class="info-text">
-                For more information about this issue and possible fixes, visit https://www.windows.com/stopcode
-                <div class="stop-code">If you call a support person, give them this info:</div>
-                <div>Stop code: CRITICAL_PROCESS_DIED</div>
+            <div>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Settings</a>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <script>
-        // Optional: Simple script to animate the percentage counter
-        let percent = 0;
-        const percentEl = document.getElementById('percentage');
-        
-        const interval = setInterval(() => {
-            if (percent >= 100) {
-                clearInterval(interval);
-            } else {
-                percent += Math.floor(Math.random() * 15) + 1;
-                if (percent > 100) percent = 100;
-                percentEl.textContent = percent;
-            }
-        }, 1500);
-    </script>
 </body>
 </html>
