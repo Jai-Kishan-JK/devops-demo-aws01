@@ -165,4 +165,200 @@
         }
 
         .sidebar-item:hover, .sidebar-item.active {
-            background-color: #
+            background-color: #f2f2f2;
+        }
+
+        .sidebar-item.active {
+            font-weight: 500;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e5e5e5;
+            margin: 12px 0;
+        }
+
+        /* --- VIDEO GRID --- */
+        main {
+            margin-left: 240px;
+            flex: 1;
+            padding: 24px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px 16px;
+        }
+
+        .video-card {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .thumbnail {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #e0e0e0;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Placeholder graphic for thumbnail */
+        .thumbnail::before {
+            content: "▶";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-translate(-50%, -50%));
+            color: #ffffff;
+            font-size: 32px;
+            opacity: 0.7;
+        }
+
+        .video-details {
+            display: flex;
+            margin-top: 12px;
+            gap: 12px;
+        }
+
+        .channel-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #ccc;
+            flex-shrink: 0;
+        }
+
+        .video-info h3 {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 6px;
+            /* Limits title to 2 lines */
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .video-metadata {
+            font-size: 14px;
+            color: #606060;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 792px) {
+            aside {
+                display: none;
+            }
+            main {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-left">
+            <div class="menu-icon">☰</div>
+            <a href="#" class="logo-container">
+                <span class="yt-logo">🔴</span>
+                <span class="logo-text">YouTube</span>
+            </a>
+        </div>
+
+        <div class="nav-center">
+            <form class="search-form" action="https://www.youtube.com/results" method="GET">
+                <input type="text" name="search_query" placeholder="Search" autocomplete="off">
+                <button type="submit" class="search-btn">🔍</button>
+            </form>
+        </div>
+
+        <div class="nav-right">
+            <span class="nav-icon">📹</span>
+            <span class="nav-icon">🔔</span>
+            <div class="profile-pic">J</div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <aside>
+            <a href="#" class="sidebar-item active"><span>🏠</span> Home</a>
+            <a href="#" class="sidebar-item"><span>🩳</span> Shorts</a>
+            <a href="#" class="sidebar-item"><span>🔔</span> Subscriptions</a>
+            <hr>
+            <a href="#" class="sidebar-item"><span>📁</span> Library</a>
+            <a href="#" class="sidebar-item"><span>⏳</span> History</a>
+            <a href="#" class="sidebar-item"><span>🎬</span> Your Videos</a>
+            <a href="#" class="sidebar-item"><span>⏱️</span> Watch Later</a>
+        </aside>
+
+        <main>
+            <div class="video-grid">
+                
+                <div class="video-card">
+                    <div class="thumbnail"></div>
+                    <div class="video-details">
+                        <div class="channel-avatar"></div>
+                        <div class="video-info">
+                            <h3>Learn Docker in 10 Minutes - Full Course for Beginners</h3>
+                            <div class="video-metadata">
+                                <p class="channel-name">Tech Academy</p>
+                                <p>150K views • 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="thumbnail"></div>
+                    <div class="video-details">
+                        <div class="channel-avatar"></div>
+                        <div class="video-info">
+                            <h3>How I Built a Continuous Deployment Pipeline using Jenkins and AWS</h3>
+                            <div class="video-metadata">
+                                <p class="channel-name">DevOps Journey</p>
+                                <p>42K views • 1 week ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="thumbnail"></div>
+                    <div class="video-details">
+                        <div class="channel-avatar"></div>
+                        <div class="video-info">
+                            <h3>Building a Minimalist HTML/CSS Setup From Scratch</h3>
+                            <div class="video-metadata">
+                                <p class="channel-name">Code Basics</p>
+                                <p>1.2M views • 1 year ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="thumbnail"></div>
+                    <div class="video-details">
+                        <div class="channel-avatar"></div>
+                        <div class="video-info">
+                            <h3>Top 10 Linux Command Line Shortcuts You Should Know</h3>
+                            <div class="video-metadata">
+                                <p class="channel-name">SysAdmin Tips</p>
+                                <p>89K views • 3 months ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
