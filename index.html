@@ -1,87 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook – log in or sign up</title>
+    <title>Simple Facebook Login</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f0f2f5;
-            color: #1c1e21;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            display: flex;
-            max-width: 980px;
-            width: 100%;
-            justify-content: space-between;
-            align-items: center;
-            gap: 40px;
-        }
-
-        /* --- LEFT SIDE: BRANDING --- */
-        .brand-section {
-            flex: 1;
-            max-width: 500px;
-            padding-bottom: 60px;
-        }
-
-        .logo {
-            font-size: 60px;
-            font-weight: bold;
-            color: #1877f2; /* Facebook Blue */
-            letter-spacing: -1px;
-            margin-left: -4px;
-            margin-bottom: 10px;
-            user-select: none;
-        }
-
-        .tagline {
-            font-size: 24px;
-            line-height: 28px;
-            font-weight: normal;
-            width: 100%;
-        }
-
-        /* --- RIGHT SIDE: LOGIN FORM --- */
-        .form-section {
-            flex: 0 0 396px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .login-card {
-            background-color: #ffffff;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 100%;
+            margin: 0;
+            padding-top: 100px;
             text-align: center;
         }
-
-        .input-group {
-            margin-bottom: 12px;
+        .container {
+            width: 350px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+        .logo {
+            color: #1877f2;
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn-login {
+            width: 96%;
+            padding: 12px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-create {
+            width: auto;
+            padding: 10px 20px;
+            background-color: #42b72a;
+            color: white;
+            border: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
 
-        .input-group input {
-            border: 1px solid #dddfe2;
-            border-radius: 6px;
-            color: #1d2129;
-            font-size: 17px;
-            padding: 14px 16px;
-            width: 100%;
-            outline: none;
+    <div class="logo">facebook</div>
+
+    <div class="container">
+        <form>
+            <input type="text" placeholder="Email or phone number" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit" class="btn-login">Log In</button>
+            <br>
+            <a href="#" style="color: #1877f2; text-decoration: none; font-size: 14px; display: inline-block; margin-top: 10px;">Forgotten password?</a>
+            <hr>
+            <button type="button" class="btn-create">Create new account</button>
+        </form>
+    </div>
+
+</body>
+</html>
